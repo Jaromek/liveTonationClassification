@@ -1,0 +1,3 @@
+https://www.kaggle.com/datasets/undefinenull/million-song-dataset-spotify-lastfm?select=MP3-Example
+https://www.kaggle.com/datasets/davidbroberts/piano-triads-wavset
+https://www.kaggle.com/datasets/deepcontractor/musical-instrument-chord-classification
