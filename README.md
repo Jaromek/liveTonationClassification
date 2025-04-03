@@ -7,4 +7,5 @@ III) na podstawie rozpoznanych akordow dopasowanie ich do danej tonacji. może b
 IV) done
 
 https://en.m.wikipedia.org/wiki/Spectrogram
-https://www.youtube.com/watch%3Fv%3DUui27_V4g0E&ved=2ahUKEwjRy4mGz7uMAxWNIBAIHfd1L1AQtwJ6BQiQARAB&sqi=2&usg=AOvVaw3dKdxYXgLxquF8dlQcLsY4
+
+https://youtu.be/Uui27_V4g0E
