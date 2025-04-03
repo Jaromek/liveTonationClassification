@@ -11,3 +11,5 @@ https://en.m.wikipedia.org/wiki/Spectrogram
 https://youtu.be/Uui27_V4g0E
 
 https://chatgpt.com/share/67ee668f-1758-8001-a200-0435adcb1818
+
+https://github.com/facebookresearch/demucs
