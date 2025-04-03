@@ -5,3 +5,5 @@ II) klasyfikacja akordów z poszczególnych ścieżek gdzie można je wyodrebni�
 III) na podstawie rozpoznanych akordow dopasowanie ich do danej tonacji. może być KNN albo nawet słownik w pythonie ale może być mniej precyzyjny jak będą zmiany tonacji w trakcie utworu
 
 IV) done
+
+https://en.m.wikipedia.org/wiki/Spectrogram
