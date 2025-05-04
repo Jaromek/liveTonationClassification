@@ -15,42 +15,33 @@ class AudioStreamer:
         if status:
             print("Status: ", status)
 
-        # Odczyt danych audio (kanał 0 - mono)
         audio_chunk = indata[:, 0]
 
-        # Debug: Sprawdzenie długości danych
         print(f"Received chunk of size: {audio_chunk.shape[0]} samples")
 
-        # Łączenie nowych danych z poprzednimi
         self.buffer = np.concatenate((self.buffer, audio_chunk))
 
-        # Przetwarzanie ramek
         while len(self.buffer) >= self.frame_size:
             frame = self.buffer[:self.frame_size]
             self.buffer = self.buffer[self.hop_size:]
 
-            # Normalizacja i okno Hanninga
             frame = self.preprocessor.normalize(frame)
             windowed = frame * np.hanning(self.frame_size)
 
-            # Analiza RMS
             rms = np.sqrt(np.mean(windowed**2))
             print(f"Frame RMS: {rms:.4f}")
 
     def start_stream(self):
         print("Streaming audio... Press Ctrl+C to stop.")
-        
-        # Sprawdzenie dostępnych urządzeń audio
+
         devices = sd.query_devices()
         print("Available audio devices:")
         for i, device in enumerate(devices):
             print(f"{i}: {device['name']}")
 
-        # Sprawdzenie, czy mikrofon jest dostępny
         device_info = sd.query_devices(kind='input')
         print(f"Using input device: {device_info['name']}")
 
-        # Rozpoczęcie strumienia audio
         self.stream = sd.InputStream(
             samplerate=self.sample_rate,
             channels=1,
@@ -58,6 +49,7 @@ class AudioStreamer:
             dtype='float32',
             callback=self.audio_callback
         )
+        # Rozpoczęcie strumienia audio
 
         self.stream.start()
 
