@@ -1,6 +1,13 @@
 import sounddevice as sd
 import numpy as np
 from preprocessing import AudioPreprocessor
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from signal_processing.pitch_detection import PitchDetector
+
+
 
 class AudioStreamer:
     def __init__(self, sample_rate=16000, frame_size=2048, hop_size=512):
@@ -8,6 +15,7 @@ class AudioStreamer:
         self.frame_size = frame_size
         self.hop_size = hop_size
         self.preprocessor = AudioPreprocessor(sample_rate, frame_size, hop_size)
+        self.pitch_detector = PitchDetector(sample_rate, frame_size)
         self.buffer = np.array([], dtype=np.float32)
         self.stream = None
 
@@ -16,7 +24,6 @@ class AudioStreamer:
             print("Status: ", status)
 
         audio_chunk = indata[:, 0]
-
         print(f"Received chunk of size: {audio_chunk.shape[0]} samples")
 
         self.buffer = np.concatenate((self.buffer, audio_chunk))
@@ -26,10 +33,13 @@ class AudioStreamer:
             self.buffer = self.buffer[self.hop_size:]
 
             frame = self.preprocessor.normalize(frame)
-            windowed = frame * np.hanning(self.frame_size)
+            windowed = self.preprocessor.apply_hanning(frame)
 
             rms = np.sqrt(np.mean(windowed**2))
             print(f"Frame RMS: {rms:.4f}")
+
+            freq, note, octave = self.pitch_detector.detect_pitch(windowed)
+            print(f"Dominujący ton: {note}{octave} ({freq:.2f} Hz)")
 
     def start_stream(self):
         print("Streaming audio... Press Ctrl+C to stop.")
@@ -49,7 +59,6 @@ class AudioStreamer:
             dtype='float32',
             callback=self.audio_callback
         )
-        # Rozpoczęcie strumienia audio
 
         self.stream.start()
 

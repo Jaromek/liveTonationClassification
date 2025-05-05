@@ -1,5 +1,4 @@
 import numpy as np
-import librosa
 
 class AudioPreprocessor:
     def __init__(self, sample_rate=16000, frame_size=2048, hop_size=512):
@@ -19,8 +18,4 @@ class AudioPreprocessor:
     def apply_hanning(self, frame):
         return frame * np.hanning(len(frame))
 
-    def frame_generator(self, signal_buffer):
-        start = 0
-        while start + self.frame_size <= len(signal_buffer):
-            yield signal_buffer[start:start + self.frame_size]
-            start += self.hop_size
+
