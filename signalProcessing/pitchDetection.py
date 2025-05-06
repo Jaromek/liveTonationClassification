@@ -1,5 +1,5 @@
 import numpy as np
-from signal_processing.fft import FFTProcessor
+from signalProcessing.fastFourierTransform import FFTProcessor
 
 NOTE_NAMES = [
     "C", "C#", "D", "D#", "E", "F",
