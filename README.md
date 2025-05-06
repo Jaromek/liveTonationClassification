@@ -102,17 +102,6 @@ liveTonationClassification/
 - Educational tool for music theory classes
 - Audio research and prototyping
 
----
-
-## 📝 TODO / Ideas
-
-- [ ] Add chord detection
-- [ ] Visualize note histogram in the GUI
-- [ ] Support for multiple audio input devices
-- [ ] Export analysis results to file
-- [ ] Add support for more scales/modes
-
----
 
 ## 🤝 Contributing
 
