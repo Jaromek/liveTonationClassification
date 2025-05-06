@@ -46,8 +46,8 @@ class keyClassifier:
         # C minor: C, D, Eb, F, G, Ab, Bb
         # C major: C, D, E, F, G, A, B
 
-        minor_key_score = float('-inf')  # Zamiast None
-        major_key_score = float('-inf')  # Zamiast None
+        minor_key_score = float('-inf') 
+        major_key_score = float('-inf')  
 
         for key_index in range(12):
             window = np.array([pitch_array[(key_index + i) % 12] for i in range(12)])
