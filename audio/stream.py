@@ -1,10 +1,10 @@
-import sounddevice as sd
-import numpy as np
-from preprocessing import AudioPreprocessor
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+import sounddevice as sd
+import numpy as np
+from audio.preprocessing import AudioPreprocessor
 from signal_processing.pitch_detection import PitchDetector
 
 

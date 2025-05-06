@@ -11,15 +11,7 @@ class PitchDetector:
         self.fft_processor = FFTProcessor(sample_rate, frame_size)
 
     def detect_pitch(self, frame):
-        """
-        Wykrywa dominującą częstotliwość i zwraca nutę oraz numer oktawy.
 
-        Parametry:
-            frame (np.ndarray): przetworzona ramka (mono, znormalizowana, okno Hanninga)
-
-        Zwraca:
-            tuple: (częstotliwość Hz, nuta, oktawa)
-        """
         magnitude = self.fft_processor.compute_magnitude_spectrum(frame)
         dominant_idx = np.argmax(magnitude)
         freq = self.fft_processor.get_frequency_bins()[dominant_idx]
@@ -28,9 +20,7 @@ class PitchDetector:
         return freq, note, octave
 
     def _freq_to_note(self, freq):
-        """
-        Przelicza częstotliwość na najbliższą nutę i oktawę.
-        """
+
         if freq <= 0:
             return "?", -1
 
