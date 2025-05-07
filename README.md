@@ -19,7 +19,7 @@
 ## 🖥️ GUI Preview
 *The app showing detected key and mode in real time.*
 <!-- Add your screenshot here -->
-![GUI Preview](https://github.com/Jaromek/liveTonationClassification/blob/main/images/interface.png)
+<img src="https://github.com/Jaromek/liveTonationClassification/blob/main/images/interface.png" width="100%" />
 
 ---
 
