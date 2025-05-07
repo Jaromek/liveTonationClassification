@@ -26,16 +26,16 @@
 ## 🛠️ Installation
 
 1. **Clone the repository**
-    ```bash
-    git clone https://github.com/your-github-username/liveTonationClassification.git
-    cd liveTonationClassification
-    ```
+```bash
+git clone https://github.com/your-github-username/liveTonationClassification.git
+cd liveTonationClassification
+```
 
 2. **Install dependencies**
-    ```bash
-    pip install numpy sounddevice
-    ```
-    *(You may also need `tkinter`, which is included with most Python installations.)*
+```bash
+pip install numpy sounddevice
+```
+*(You may also need `tkinter`, which is included with most Python installations.)*
 
 ---
 
