@@ -17,10 +17,9 @@
 ---
 
 ## 🖥️ GUI Preview
-
+*The app showing detected key and mode in real time.*
 <!-- Add your screenshot here -->
-<!-- ![GUI Preview](https://user-images.githubusercontent.com/your-github-username/your-screenshot.png) -->
-*Example: The app showing detected key and mode in real time.*
+![GUI Preview](https://github.com/Jaromek/liveTonationClassification/blob/main/images/interface.png)
 
 ---
 
